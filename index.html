@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prometheus Automation | Making Your Business Growth Inevitable</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        body { font-family: 'Montserrat', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-poppins { font-family: 'Poppins', sans-serif; }
+
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeInUp { animation: fadeInUp 1s ease-out forwards; }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+
+        @keyframes blob {
+          0% { transform: translate(0px, 0px) scale(1); }
+          33% { transform: translate(30px, -50px) scale(1.1); }
+          66% { transform: translate(-20px, 20px) scale(0.9); }
+          100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob { animation: blob 7s infinite; }
+        .animation-delay-2000 { animation-delay: 2s; }
+    </style>
+</head>
+<body class="text-gray-800 bg-white">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tight text-gray-900 font-poppins">Prometheus</a>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-700 focus:outline-none" aria-label="Toggle menu">
+                    <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <ul id="nav-links" class="hidden md:flex md:items-center md:space-x-8 absolute md:static top-16 left-0 right-0 w-full bg-white md:bg-transparent shadow-md md:shadow-none transition-all duration-300 ease-in-out">
+                <li class="text-center md:text-left"><a href="#problem" class="nav-link block px-4 py-3 md:p-0 hover:text-blue-600 transition-colors duration-300">The Grind</a></li>
+                <li class="text-center md:text-left"><a href="#solution" class="nav-link block px-4 py-3 md:p-0 hover:text-blue-600 transition-colors duration-300">Our Process</a></li>
+                <li class="text-center md:text-left"><a href="#offers" class="nav-link block px-4 py-3 md:p-0 hover:text-blue-600 transition-colors duration-300">Pricing</a></li>
+                <li class="text-center md:text-left"><a href="#philosophy" class="nav-link block px-4 py-3 md:p-0 hover:text-blue-600 transition-colors duration-300">Our Philosophy</a></li>
+                <li class="text-center md:text-left p-4 md:p-0">
+                    <button class="primary-cta w-full md:w-auto px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
+                        Book Discovery Call
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex flex-col justify-center pt-20 pb-16 px-4 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+        </div>
+        <div class="container mx-auto max-w-4xl relative z-10 text-center">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-fadeInUp">
+                Stop Hoping for Growth. <span class="text-blue-600">Start Making It Inevitable.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto animate-fadeInUp delay-200">
+                You're an innovator, a builder, a visionary. But the daily grind is stealing your time and energy. We build your perfect AI teammate to handle the repetitive work, so you can get back to doing what only you can do.
+            </p>
+            <button class="primary-cta px-8 py-4 bg-blue-600 text-white rounded-full text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 animate-fadeInUp delay-400">
+                Book My Free Discovery Call
+            </button>
+        </div>
+    </section>
+
+    <section id="problem" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Does This Grind Sound Familiar?</h2>
+                <p class="text-lg text-gray-600">It's the invisible force that pulls great founders down. The quicksand of "busy work" that suffocates big ideas and makes success feel like a constant struggle.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 transform transition-transform duration-300 hover:scale-105 hover:shadow-md">
+                    <h3 class="text-xl font-semibold mb-3">The Hamster Wheel of Tasks</h3>
+                    <p class="text-gray-600">Your day is a blur of emails, reports, and follow-ups. You're working *in* the business, not *on* it. Your true work never gets done.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 transform transition-transform duration-300 hover:scale-105 hover:shadow-md">
+                    <h3 class="text-xl font-semibold mb-3">The Growth Paradox</h3>
+                    <p class="text-gray-600">To grow, you need to hire. But hiring means more management, more overhead, and less freedom. You're trapped, and scaling feels impossible.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 transform transition-transform duration-300 hover:scale-105 hover:shadow-md">
+                    <h3 class="text-xl font-semibold mb-3">The Energy Drain</h3>
+                    <p class="text-gray-600">Your passion is fading, replaced by exhaustion. Your team feels it too. Greatness can't be sustained on fumes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solution" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Our 3-Step Path to Inevitable Scale</h2>
+                <p class="text-lg text-gray-600">We don't sell software; we deliver certainty. This is our proven process for making your operational success a logical outcome.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="p-8">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto text-blue-600 font-bold text-xl">1</div>
+                    <h3 class="text-xl font-semibold mb-3">Strategy & Mapping</h3>
+                    <p class="text-gray-600">We start with a deep dive to identify the single highest-ROI workflow to automate, defining clear KPIs for success.</p>
+                </div>
+                <div class="p-8">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto text-blue-600 font-bold text-xl">2</div>
+                    <h3 class="text-xl font-semibold mb-3">Build & Deploy</h3>
+                    <p class="text-gray-600">Our team builds your custom agent in a secure, isolated environment and integrates it seamlessly with your existing tools.</p>
+                </div>
+                <div class="p-8">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto text-blue-600 font-bold text-xl">3</div>
+                    <h3 class="text-xl font-semibold mb-3">Inevitable Performance</h3>
+                    <p class="text-gray-600">We provide ongoing monitoring, maintenance, and monthly performance reports. As you grow, your agent scales with you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="offers" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Choose Your Automation Tier</h2>
+                <p class="text-lg text-gray-600">We structure our partnerships to match your ambition, from automating a single task to transforming an entire department.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto items-stretch">
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 flex flex-col">
+                    <h3 class="text-xl font-semibold mb-2">Agent Starter</h3>
+                    <p class="text-gray-600 mb-4 flex-grow">Make consistent output inevitable. We'll deploy a core agent to handle one critical task with flawless precision, 24/7.</p>
+                    <div class="my-6 text-center"><span class="text-4xl font-bold">$1,500</span><span class="text-gray-500">/mo</span></div>
+                    <button class="primary-cta w-full mt-auto py-3 bg-gray-200 text-gray-800 rounded-full hover:bg-gray-300 transition-colors duration-300">Book a Call</button>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-xl border-2 border-blue-600 relative transform md:scale-105 flex flex-col">
+                    <div class="absolute top-0 right-4 -mt-4"><span class="bg-blue-600 text-white text-xs uppercase tracking-wider px-4 py-1 rounded-full">Most Popular</span></div>
+                    <h3 class="text-xl font-semibold mb-2">Growth Partner</h3>
+                    <p class="text-gray-600 mb-4 flex-grow">Make your sales pipeline inevitable. We'll deploy an integrated suite of agents to run your lead generation or customer onboarding system on autopilot.</p>
+                    <div class="my-6 text-center"><span class="text-4xl font-bold">$4,000</span><span class="text-gray-500">/mo</span></div>
+                    <button class="primary-cta w-full mt-auto py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-300">Start My Transformation</button>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 flex flex-col">
+                    <h3 class="text-xl font-semibold mb-2">Performance Scale</h3>
+                    <p class="text-gray-600 mb-4 flex-grow">A fully custom ecosystem with deep API integrations and dedicated support, designed to transform a major business unit.</p>
+                    <div class="my-6 text-center"><span class="text-4xl font-bold">Custom</span><span class="text-gray-500 block">Let's Talk</span></div>
+                    <button class="primary-cta w-full mt-auto py-3 bg-gray-200 text-gray-800 rounded-full hover:bg-gray-300 transition-colors duration-300">Book a Consultation</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="philosophy" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-blue-50 rounded-2xl p-8 md:p-12 border-l-4 border-blue-600">
+                    <blockquote class="relative">
+                        <p class="text-xl md:text-2xl font-medium text-gray-800 italic">"The future isn't about you vs. automation. It's about your vision, amplified by intelligence. We build AI teammates that execute the day-to-day, so you can focus on the strategic moves that win the market."</p>
+                        <footer class="mt-6"><div class="text-blue-600 font-semibold">— The Prometheus Automation Team</div></footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="py-20 bg-gray-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Make Your Success a System, Not a Struggle?</h2>
+                <p class="text-lg text-gray-300 mb-10">Schedule a 30-minute discovery call. We'll diagnose the primary bottleneck holding you back and map out the first step toward making your operational excellence inevitable.</p>
+                <button class="primary-cta px-8 py-4 bg-blue-600 text-white rounded-full text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 inline-flex items-center">
+                    Book My Free Discovery Call
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-gray-200 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <div class="text-gray-600 mb-4 md:mb-0">© 2025 Prometheus Automation. All rights reserved.</div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300">Privacy</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+            const menuIconOpen = document.getElementById('menu-icon-open');
+            const menuIconClose = document.getElementById('menu-icon-close');
+
+            const toggleMenu = () => {
+                navLinks.classList.toggle('hidden');
+                menuIconOpen.classList.toggle('hidden');
+                menuIconClose.classList.toggle('hidden');
+            };
+
+            menuToggle.addEventListener('click', toggleMenu);
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!navLinks.classList.contains('hidden')) {
+                        toggleMenu();
+                    }
+                });
+            });
+
+            document.querySelectorAll('.primary-cta').forEach(button => {
+                button.addEventListener('click', () => {
+                    if (window.confetti) {
+                        window.confetti({
+                            particleCount: 150,
+                            spread: 70,
+                            origin: { y: 0.6 },
+                            colors: ['#3B82F6', '#FBBF24', '#ffffff']
+                        });
+                    }
+                    window.location.href = 'https://calendly.com/prometheus-prometheusautomation/30min';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
