@@ -11,15 +11,50 @@
         body { font-family: 'Montserrat', sans-serif; }
         h1, h2, h3, h4, h5, h6, .font-poppins { font-family: 'Poppins', sans-serif; }
 
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
+        /* --- Added for Animations --- */
+        .hero .highlight {
+            position: relative;
+            display: inline-block;
         }
-        .animate-fadeInUp { animation: fadeInUp 1s ease-out forwards; }
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-        .delay-400 { animation-delay: 0.4s; }
+        .hero .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -8px; /* Adjusted for larger font */
+            left: 5%;
+            width: 90%;
+            height: 4px;
+            background: linear-gradient(90deg, #3B82F6, #60A5FA);
+            border-radius: 2px;
+            animation: underlinePulse 3s ease-in-out infinite;
+        }
+
+        @keyframes underlinePulse {
+            0% { width: 90%; left: 5%; opacity: 0.8; }
+            50% { width: 100%; left: 0%; opacity: 1; }
+            100% { width: 90%; left: 5%; opacity: 0.8; }
+        }
+
+        .case-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* For Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* End Animation CSS */
 
         @keyframes blob {
           0% { transform: translate(0px, 0px) scale(1); }
@@ -66,13 +101,13 @@
             <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
         </div>
         <div class="container mx-auto max-w-4xl relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-fadeInUp">
-                Stop Hoping for Growth. <span class="text-blue-600">Start Making It Inevitable.</span>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                Stop Hoping for Growth. <span class="highlight">Start Making It Inevitable.</span>
             </h1>
-            <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto animate-fadeInUp delay-200">
+            <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
                 You're an innovator, a builder, a visionary. But the daily grind is stealing your time and energy. We build your perfect AI teammate to handle the repetitive work, so you can get back to doing what only you can do.
             </p>
-            <button class="primary-cta px-8 py-4 bg-blue-600 text-white rounded-full text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 animate-fadeInUp delay-400">
+            <button class="primary-cta px-8 py-4 bg-blue-600 text-white rounded-full text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
                 Book My Free Discovery Call
             </button>
         </div>
@@ -81,19 +116,19 @@
     <section id="problem" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="max-w-3xl mx-auto text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Does This Grind Sound Familiar?</h2>
-                <p class="text-lg text-gray-600">It's the invisible force that pulls great founders down. The quicksand of "busy work" that suffocates big ideas and makes success feel like a constant struggle.</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 reveal">Does This Grind Sound Familiar?</h2>
+                <p class="text-lg text-gray-600 reveal" style="transition-delay: 0.1s;">It's the invisible force that pulls great founders down. The quicksand of "busy work" that suffocates big ideas and makes success feel like a constant struggle.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 transform transition-transform duration-300 hover:scale-105 hover:shadow-md">
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 transform transition-transform duration-300 hover:scale-105 hover:shadow-md reveal">
                     <h3 class="text-xl font-semibold mb-3">The Hamster Wheel of Tasks</h3>
                     <p class="text-gray-600">Your day is a blur of emails, reports, and follow-ups. You're working *in* the business, not *on* it. Your true work never gets done.</p>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 transform transition-transform duration-300 hover:scale-105 hover:shadow-md">
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 transform transition-transform duration-300 hover:scale-105 hover:shadow-md reveal" style="transition-delay: 0.2s;">
                     <h3 class="text-xl font-semibold mb-3">The Growth Paradox</h3>
                     <p class="text-gray-600">To grow, you need to hire. But hiring means more management, more overhead, and less freedom. You're trapped, and scaling feels impossible.</p>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 transform transition-transform duration-300 hover:scale-105 hover:shadow-md">
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 transform transition-transform duration-300 hover:scale-105 hover:shadow-md reveal" style="transition-delay: 0.3s;">
                     <h3 class="text-xl font-semibold mb-3">The Energy Drain</h3>
                     <p class="text-gray-600">Your passion is fading, replaced by exhaustion. Your team feels it too. Greatness can't be sustained on fumes.</p>
                 </div>
@@ -104,22 +139,22 @@
     <section id="solution" class="py-20">
         <div class="container mx-auto px-4">
             <div class="max-w-3xl mx-auto text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Our 3-Step Path to Inevitable Scale</h2>
-                <p class="text-lg text-gray-600">We don't sell software; we deliver certainty. This is our proven process for making your operational success a logical outcome.</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 reveal">Our 3-Step Path to Inevitable Scale</h2>
+                <p class="text-lg text-gray-600 reveal" style="transition-delay: 0.1s;">We don't sell software; we deliver certainty. This is our proven process for making your operational success a logical outcome.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8 text-center">
-                <div class="p-8">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto text-blue-600 font-bold text-xl">1</div>
+                <div class="p-8 reveal">
+                    <div class="case-icon w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto text-blue-600 font-bold text-xl">1</div>
                     <h3 class="text-xl font-semibold mb-3">Strategy & Mapping</h3>
                     <p class="text-gray-600">We start with a deep dive to identify the single highest-ROI workflow to automate, defining clear KPIs for success.</p>
                 </div>
-                <div class="p-8">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto text-blue-600 font-bold text-xl">2</div>
+                <div class="p-8 reveal" style="transition-delay: 0.2s;">
+                    <div class="case-icon w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto text-blue-600 font-bold text-xl">2</div>
                     <h3 class="text-xl font-semibold mb-3">Build & Deploy</h3>
                     <p class="text-gray-600">Our team builds your custom agent in a secure, isolated environment and integrates it seamlessly with your existing tools.</p>
                 </div>
-                <div class="p-8">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto text-blue-600 font-bold text-xl">3</div>
+                <div class="p-8 reveal" style="transition-delay: 0.3s;">
+                    <div class="case-icon w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto text-blue-600 font-bold text-xl">3</div>
                     <h3 class="text-xl font-semibold mb-3">Inevitable Performance</h3>
                     <p class="text-gray-600">We provide ongoing monitoring, maintenance, and monthly performance reports. As you grow, your agent scales with you.</p>
                 </div>
@@ -130,24 +165,24 @@
     <section id="offers" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="max-w-3xl mx-auto text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Choose Your Automation Tier</h2>
-                <p class="text-lg text-gray-600">We structure our partnerships to match your ambition, from automating a single task to transforming an entire department.</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 reveal">Choose Your Automation Tier</h2>
+                <p class="text-lg text-gray-600 reveal" style="transition-delay: 0.1s;">We structure our partnerships to match your ambition, from automating a single task to transforming an entire department.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto items-stretch">
-                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 flex flex-col">
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 flex flex-col reveal">
                     <h3 class="text-xl font-semibold mb-2">Agent Starter</h3>
                     <p class="text-gray-600 mb-4 flex-grow">Make consistent output inevitable. We'll deploy a core agent to handle one critical task with flawless precision, 24/7.</p>
                     <div class="my-6 text-center"><span class="text-4xl font-bold">$1,500</span><span class="text-gray-500">/mo</span></div>
                     <button class="primary-cta w-full mt-auto py-3 bg-gray-200 text-gray-800 rounded-full hover:bg-gray-300 transition-colors duration-300">Book a Call</button>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-xl border-2 border-blue-600 relative transform md:scale-105 flex flex-col">
+                <div class="bg-white p-8 rounded-lg shadow-xl border-2 border-blue-600 relative transform md:scale-105 flex flex-col reveal" style="transition-delay: 0.2s;">
                     <div class="absolute top-0 right-4 -mt-4"><span class="bg-blue-600 text-white text-xs uppercase tracking-wider px-4 py-1 rounded-full">Most Popular</span></div>
                     <h3 class="text-xl font-semibold mb-2">Growth Partner</h3>
                     <p class="text-gray-600 mb-4 flex-grow">Make your sales pipeline inevitable. We'll deploy an integrated suite of agents to run your lead generation or customer onboarding system on autopilot.</p>
                     <div class="my-6 text-center"><span class="text-4xl font-bold">$4,000</span><span class="text-gray-500">/mo</span></div>
                     <button class="primary-cta w-full mt-auto py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-300">Start My Transformation</button>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 flex flex-col">
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 flex flex-col reveal" style="transition-delay: 0.3s;">
                     <h3 class="text-xl font-semibold mb-2">Performance Scale</h3>
                     <p class="text-gray-600 mb-4 flex-grow">A fully custom ecosystem with deep API integrations and dedicated support, designed to transform a major business unit.</p>
                     <div class="my-6 text-center"><span class="text-4xl font-bold">Custom</span><span class="text-gray-500 block">Let's Talk</span></div>
@@ -159,7 +194,7 @@
 
     <section id="philosophy" class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto">
+            <div class="max-w-3xl mx-auto reveal">
                 <div class="bg-blue-50 rounded-2xl p-8 md:p-12 border-l-4 border-blue-600">
                     <blockquote class="relative">
                         <p class="text-xl md:text-2xl font-medium text-gray-800 italic">"The future isn't about you vs. automation. It's about your vision, amplified by intelligence. We build AI teammates that execute the day-to-day, so you can focus on the strategic moves that win the market."</p>
@@ -231,6 +266,22 @@
                     window.location.href = 'https://calendly.com/prometheus-prometheusautomation/30min';
                 });
             });
+            
+            // --- Added for Scroll Animations ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+            });
+            // --- End Scroll Animation Script ---
         });
     </script>
 </body>
